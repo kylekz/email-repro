@@ -1,6 +1,5 @@
 import "@/app/globals.css";
 import { Inter } from "next/font/google";
-import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,9 +10,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen`}>
-        <Providers>{children}</Providers>
-      </body>
+      <body className={`${inter.className} min-h-screen`}>{children}</body>
     </html>
   );
 }

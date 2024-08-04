@@ -1,8 +1,12 @@
 "use server";
 
-import { trpcAction } from "@/lib/server/typed-action";
-import { trpc } from "./trpc-server";
+import { RemovedFromOrganization } from "@repo/email/emails/removed-from-org";
 
 export async function email() {
-  return trpcAction(() => trpc.router.send());
+  const rendered = RemovedFromOrganization({
+    baseUrl: "",
+    receiverName: "",
+    organizationName: "",
+  });
+  console.log(rendered);
 }
